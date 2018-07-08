@@ -1,0 +1,11 @@
+[Unit]
+Description=Notifications on server start-stop
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/startup-report.sh
+ExecStop=/usr/bin/telegram "The server is shutting down"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
